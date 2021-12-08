@@ -19,7 +19,9 @@
 ## Problems worth solving
 
 * Spurious modes
-  * Arise from artificial boundary conditions used to modulate non-reflecting outflow or inflow
+  * Arise from
+    * artificial boundary conditions used to modulate non-reflecting outflow or inflow
+    * sponge regions
   * Turn up in modal decompositions, are discarded *ad hoc*
   * Idea: condition correlation matrix on data?
 * Predicting extreme events

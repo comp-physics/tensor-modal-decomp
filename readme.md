@@ -1,7 +1,5 @@
 # Tensor modal decomposition
 
-## Title
-
 * What it is: Modal decomposition
 * How it is done
   * Statistics

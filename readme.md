@@ -44,6 +44,14 @@
   * [More from JHU](https://pages.jh.edu/cmeneve1/datasets.html)
   * etc.
 
+## Software
+
+* [FastICA](https://en.wikipedia.org/wiki/FastICA)
+* [Scikit-FastICA](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.FastICA.html)
+* [Julia](https://juliahub.com/ui/Packages/IndependentComponentAnalysis/NI0LK/0.1.4)
+* [More](https://github.com/search?q=independent+component+analysis)
+
+
 
 
 ## Literature

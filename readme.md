@@ -5,10 +5,10 @@
 * What it is: Modal decomposition
 * How it is done
   * Statistics
-  * > second-order moments
+  * greater-than second-order moments
   * ICA, etc.
   * latent variables
-  * > second-order tensors
+  * greater-than second-order tensors
 * What is does
   * recover structures in flows
   * model reduction

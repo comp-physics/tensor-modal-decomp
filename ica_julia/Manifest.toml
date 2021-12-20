@@ -822,6 +822,12 @@ git-tree-sha1 = "afadeba63d90ff223a6a48d2009434ecee2ec9e8"
 uuid = "92933f4c-e287-5a05-a399-4b506db050ca"
 version = "1.7.1"
 
+[[ProperOrthogonalDecomposition]]
+deps = ["LinearAlgebra", "StableRNGs", "Statistics"]
+git-tree-sha1 = "29ce1bd02d909df87c078b573c713c4888c1d968"
+uuid = "78421dfc-ac16-5d69-8300-c22153e3d0b6"
+version = "1.0.4"
+
 [[QuadGK]]
 deps = ["DataStructures", "LinearAlgebra"]
 git-tree-sha1 = "78aadffb3efd2155af139781b8a8df1ef279ea39"
@@ -934,6 +940,12 @@ deps = ["ChainRulesCore", "IrrationalConstants", "LogExpFunctions", "OpenLibm_jl
 git-tree-sha1 = "e08890d19787ec25029113e88c34ec20cac1c91e"
 uuid = "276daf66-3868-5448-9aa4-cd146d93841b"
 version = "2.0.0"
+
+[[StableRNGs]]
+deps = ["Random", "Test"]
+git-tree-sha1 = "3be7d49667040add7ee151fefaf1f8c04c8c8276"
+uuid = "860ef19b-820b-49d6-a774-d7a799459cd3"
+version = "1.0.0"
 
 [[StackViews]]
 deps = ["OffsetArrays"]

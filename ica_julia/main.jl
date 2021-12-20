@@ -18,7 +18,7 @@ j_indices = nothing
 k = 1
 while isnothing(ica)
     try 
-        ica, i_indices, j_indices = compute_ica(p, 10, 3, 3)
+        ica, i_indices, j_indices = compute_ica(p, 16, 1, 1)
     catch
         @warn "ica not converged in $k-th attempt"
         k = k + 1
@@ -39,10 +39,10 @@ for (k, ind) in enumerate(CartesianIndices((figs_per_row, size(independent_compo
 end
 display(fig_ica)
 
-pod, i_indices, j_indices = compute_pod_svd(p, 3, 3)
+pod, i_indices, j_indices = compute_pod_svd(p, 1, 1)
 # This becomes a three-way tensor; the k-th component is given by components[:, :, k]
 proper_components = reshape(pod, (length(i_indices), length(j_indices), size(pod, 2)))
-proper_components = proper_components[:, 1:size(independent_components, 3)]
+proper_components = proper_components[:, :, 1:size(independent_components, 3)]
 
 # Plots the independent components
 figs_per_row = 4

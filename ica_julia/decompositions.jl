@@ -17,5 +17,6 @@ function compute_pod_svd(p::AbstractArray{<:Any, 3}, ds_i=1, ds_j=1)
     j_inds = 1 : ds_j : size(p, 3)
     p = p[:, i_inds, j_inds]
     p = Matrix(transpose(reshape(p, (size(p, 1), :))))
+    @show size(p)
     return POD(p)[1].modes, i_inds, j_inds
 end

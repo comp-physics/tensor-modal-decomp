@@ -1,3 +1,5 @@
+let
+
 using MAT
 using MultivariateStats
 using GLMakie
@@ -25,19 +27,18 @@ while isnothing(ica)
     end
 end
 
-
 # This becomes a three-way tensor; the k-th component is given by components[:, :, k]
 independent_components = reshape(ica, (length(i_indices), length(j_indices), size(ica, 2)))
 
 # Plots the independent components
-figs_per_row = 4
-fig_ica = Figure()
-for (k, ind) in enumerate(CartesianIndices((figs_per_row, size(independent_components, 3)))[:])
-    if k <= size(independent_components, 3)
-        heatmap(fig_ica[ind[2], ind[1]], independent_components[:, :, k])
-    end
-end
-display(fig_ica)
+# figs_per_row = 4
+# fig_ica = Figure()
+# for (k, ind) in enumerate(CartesianIndices((figs_per_row, size(independent_components, 3)))[:])
+#     if k <= size(independent_components, 3)
+#         heatmap(fig_ica[ind[2], ind[1]], independent_components[:, :, k])
+#     end
+# end
+# display(fig_ica)
 
 pod, i_indices, j_indices = compute_pod_svd(p, 1, 1)
 # This becomes a three-way tensor; the k-th component is given by components[:, :, k]
@@ -45,17 +46,13 @@ proper_components = reshape(pod, (length(i_indices), length(j_indices), size(pod
 proper_components = proper_components[:, :, 1:size(independent_components, 3)]
 
 # Plots the independent components
-figs_per_row = 4
-fig_pod = Figure()
-for (k, ind) in enumerate(CartesianIndices((figs_per_row, size(independent_components, 3)))[:])
-    if k <= size(independent_components, 3)
-        heatmap(fig_pod[ind[2], ind[1]], proper_components[:, :, k])
-    end
+# figs_per_row = 4
+# fig_pod = Figure()
+# for (k, ind) in enumerate(CartesianIndices((figs_per_row, size(independent_components, 3)))[:])
+#     if k <= size(independent_components, 3)
+#         heatmap(fig_pod[ind[2], ind[1]], proper_components[:, :, k])
+#     end
+# end
+# display(fig_pod)
+ 
 end
-display(fig_pod)
- 
- 
- 
- 
- 
- 

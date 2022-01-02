@@ -24,7 +24,6 @@ while isnothing(ica)
     end
 end
 
-
 # This becomes a three-way tensor; the k-th component is given by components[:, :, k]
 independent_components = reshape(ica, (length(i_indices), length(j_indices), size(ica, 2)))
 
@@ -52,8 +51,3 @@ for (k, ind) in enumerate(CartesianIndices((figs_per_row, size(independent_compo
     end
 end
 display(fig_pod)
- 
- 
- 
- 
- 

@@ -6,7 +6,6 @@ include("utils.jl")
 include("decompositions.jl")
 
 data = matread("../spod/jet_data/jetLES.mat")
-
 p = data["p"]
 
 # The fastica algorithm used by the packages doesn't seem to converge
@@ -18,10 +17,10 @@ j_indices = nothing
 k = 1
 while isnothing(ica)
     try 
-        ica, i_indices, j_indices = compute_ica(p, 16, 1, 1)
+        global ica, i_indices, j_indices = compute_ica(p, 16, 1, 1)
     catch
         @warn "ica not converged in $k-th attempt"
-        k = k + 1
+        global k = k + 1
     end
 end
 
@@ -53,7 +52,6 @@ for (k, ind) in enumerate(CartesianIndices((figs_per_row, size(independent_compo
     end
 end
 display(fig_pod)
- 
  
  
  

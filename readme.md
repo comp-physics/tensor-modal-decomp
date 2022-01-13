@@ -1,5 +1,11 @@
 # Tensor modal decomposition
 
+## To-do
+
+* Look at the distribution of the $z$'s
+
+## Main
+
 * What it is: Modal decomposition
 * How it is done
   * Statistics

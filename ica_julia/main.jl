@@ -20,8 +20,16 @@ ifplotdata = false
 # Remove mean
 p = p .- mean(p[:])
 
+# x = (1:length(x))*maximum(x)/length(x)
+# r = (1:length(r))*maximum(r)/length(r)
+
 # switches the spatial dimensions to the leading dimension
 p = permutedims(p, [2, 3, 1])
+
+# add inverted jet
+size_fac = 0.01
+p = p[end:-1:1,end:-1:1,:]*size_fac + p
+# p = p[end:-1:1,end:-1:1,:]*size_fac
 
 # Strides in i and j
 ds_i = 1 
@@ -38,7 +46,8 @@ j_length = length(j_arr)
 num_comp = 16
 
 if ifplotdata
-    fig_data = heatmap(x[j_arr], r[i_arr], Matrix(p[i_arr, j_arr, 10]'),colormap =:bluesreds)
+    display_ts = 5000
+    fig_data = heatmap(x[j_arr], r[i_arr], Matrix(p[i_arr, j_arr, display_ts]'),colormap =:summer)
     display(fig_data)
     save("figures/data.png",fig_data)
 end

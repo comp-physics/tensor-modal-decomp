@@ -43,7 +43,8 @@ size(p)
 figure('name','Pressure of the symmetric component of a turbulent jet')
 for ti=1:100
     pcolor(x,r,squeeze(p(ti,:,:)))
-    axis equal tight, shading interp, caxis([4.43 4.48])
+    axis equal tight, caxis([4.43 4.48])
+    colormap(summer)
     xlabel('x'), ylabel('r')
     pause(0.05)
     drawnow

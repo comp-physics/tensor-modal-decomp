@@ -11,7 +11,7 @@ function compute_ica(p::AbstractArray{<:Any,3}, k, ds_i=1, ds_j=1)
     @show size(p)
     p = reshape(p, (:, size(p, 3)))
     @show size(p)
-    modes = fit(ICA, p, k; maxiter=10000, tol=1e-3).W
+    modes = fit(ICA, p, k; maxiter=100000, tol=0.00001).W
     modes = reshape(modes, (length(i_inds), length(j_inds), size(modes, 2)))
     return modes, i_inds, j_inds
 end 

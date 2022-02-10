@@ -5,6 +5,7 @@ using GLMakie
 using ProperOrthogonalDecomposition
 using Statistics
 using Random
+using Distributions
 
 include("utils.jl")
 include("decompositions.jl")
@@ -14,9 +15,23 @@ p = data["p"]
 x = data["x"][1,:]
 r = data["r"][:,1]
 
-ifica = true
+iftest = true
+ifica = false
 ifpod = false
 ifplotdata = false
+
+n_latent = 5
+n_out = 1
+n_samples = 1000
+s_noise = 0.1
+
+Atest = rand(n_out,n_latent)
+data = A*rand(Exponential(0.1),n_latent,n_samples) + randn(n_latent,n_samples)*s_noise
+data = Matrix(data')
+
+modes = fit(ICA, data, n_latent; maxiter=100000, tol=0.00001).W
+
+
 
 # x = (1:length(x))*maximum(x)/length(x)
 # r = (1:length(r))*maximum(r)/length(r)
